@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+
+<html lang="fr">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Navigation</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="css/materialize.min.css" type="text/css" rel="stylesheet" media="screen,projection" />
+    <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection" />
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav role="navigation">
+        <ul id="slide-out" class="sidenav sidenav-fixed center">
+            <li><img src="img/utilisateur.jpg" class="circle"></li>
+            <li><a href="accueil.html"><i class="material-icons white-text">home</i>Accueil</a></li>
+            <li><a href="cabinet.html"><i class="material-icons white-text">location_on</i>Cabinet</a></li>
+            <li><a href="profil.html"><i class="material-icons white-text">person</i>Mon profil</a></li>
+            <li><a href="dossierMedical.html" class="active"><i class="material-icons white-text">folder</i>Dossier médical</a></li>
+            <li><a href="parametres.html"><i class="material-icons white-text">settings</i>Paramètres</a></li>
+        </ul>
+        <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+    </nav>
+    <!-- Page -->
+    <main>
+        <br>
+        <header class="center">
+            <img src="img/utilisateur.jpg" alt="" class="circle responsive-img Picture">
+            <h3 class="center black-text">Dossier médical</h3>
+        </header>
+        <br>
+            
+        <section class="container">
+            <ul class="collapsible">
+                <li class="center">
+                    <div class="collapsible-header Paiement">
+                        <i class="material-icons">payment</i>Historique des paiements
+                    </div>
+                    <div class="collapsible-body">
+                        <div class="collapsible-header">
+                            <i class="material-icons">file_download</i>Facture du 05/05/18
+                        </div>
+                        <div class="collapsible-body2 ">
+                            <div class="collapsible-header">
+                                <i class="material-icons">file_download</i>Facture du 12/05/18</span>
+                            </div>
+                        </div>
+                        <div class="collapsible-body3 ">
+                            <div class="collapsible-header">
+                                <i class="material-icons">file_download</i>Facture du 14/05/18</span>
+                            </div>
+                        </div>
+                        <div class="collapsible-body4 ">
+                            <div class="collapsible-header">
+                                <i class="material-icons">file_download</i>Facture du 20/05/18</span>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+
+                <li class="center">
+                    <div class="collapsible-header Rendez-vous">
+                        <i class="material-icons">event_note</i>Historique des rendez-vous
+                    </div>
+                    <div class="collapsible-body">
+                        <div class="collapsible-header">
+                            <i class="material-icons">file_download</i>Compte-rendu du 05/05/18
+                        </div>
+                        <div class="collapsible-body2">
+                            <div class="collapsible-header">
+                                <i class="material-icons">file_download</i>Compte-rendu du 12/05/18
+                            </div>
+                        </div>
+                        <div class="collapsible-body3">
+                            <div class="collapsible-header">
+                                <i class="material-icons">file_download</i>Compte-rendu du 14/05/18
+                            </div>
+                            <div class="collapsible-body4">
+                                <div class="collapsible-header">
+                                    <i class="material-icons">file_download</i>Compte-rendu du 20/05/18
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </section>
+        
+        <footer class="container center">
+            <h5 class="center orange-text"><i class="material-icons">monetization_on</i> RESTE A PAYER : 254,40€</h5>
+        </footer>
+    </main>
+
+    <!--  Scripts-->
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="js/materialize.js"></script>
+    <script src="js/init.js"></script>
+    </body>
+</html>

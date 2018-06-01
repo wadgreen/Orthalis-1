@@ -1,0 +1,109 @@
+html, body {
+    /* couleurs */
+    --colorSidenav: #477480;
+    --colorSidenavClaire: #57ccc6;
+    --colorActive: #ee946b;
+    --colorPoliceBlanche: #ffff;
+    
+    --colorActiveFonce: #e66131;
+}
+    main {
+        /* Décalage de 300px pour la sidebar */
+        padding-left: 300px;
+    }
+    nav, nav .nav-wrapper i, nav a.sidenav-trigger, nav a.sidenav-trigger i {
+        /* Navbar contient le burger mais est invisible */
+        height: 0;
+    }
+    
+    .sidenav {
+        background: var(--colorSidenav);
+    }
+        .sidenav img {
+            margin-top: 50px;
+            margin-bottom: 50px;
+            width: 150px;
+        }
+        .sidenav li a {
+            color: var(--colorPoliceBlanche);
+        }
+        .sidenav-trigger {
+            color: var(--colorPoliceBlanche);
+            text-shadow: grey 0px 2px 3px;
+        }
+        .sidenav li a.active {
+            background: var(--colorActive);
+        }
+    
+    @media only screen and (max-width : 992px) {
+        #index-banner .section {
+            top: 0;
+        }
+    }
+    @media only screen and (max-width : 992px) {
+        header, main, footer {
+          padding-left: 0;
+        }
+    }
+    /* Page Mon profil : =========================================================== */
+    .ImgProfil {
+        width: 200px;
+    }
+    .TextNomUtilisateur {
+        font-size: 3rem;
+    }
+    .CarouselProfil img {
+        height: 100%;
+        width: auto;
+    }
+    /* Page Paramètres : ============================================================ */
+    .collapsible .pad15 {
+        padding: 1.5rem;
+    }
+      
+    [type="checkbox"] + span:not(.lever) {
+        padding-left: 25px;
+        padding-right: 15px;
+    }
+    /* Page Login patient : ============================================================ */
+    .vaguetop {
+        width:100%;
+    }
+    .vaguebottom {
+        position:fixed;
+        bottom:0;
+        width:100%;
+    }
+    /* Page Accueil : ============================================================ */
+    /*classe pour les polices dans la notif voila*/
+    .plusgro{
+        font-weight: bold;
+    }
+    .dent{
+        height: 60px;
+        width: 60px;
+        border-radius: 50%;
+        top: 90px;
+    }
+    /* Page Login cabinet : ======================================================= */
+    
+    /* Page Dossier médical : ===================================================== */
+    .corps{
+        height: 100%;
+        width: 100%;
+    }
+    .Picture{
+        height:20vh;
+        width: 20vh;
+    
+    }
+    .Paiement {
+        display: block;
+        text-align: center;
+    
+    }
+    .Rendez-vous{
+        display: block;
+        text-align: center;
+    }
+    

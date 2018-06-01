@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+
+<html lang="fr">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Mon profil</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="css/materialize.min.css" type="text/css" rel="stylesheet" media="screen,projection" />
+    <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection" />
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav role="navigation">
+        <ul id="slide-out" class="sidenav sidenav-fixed center">
+            <li><img src="img/utilisateur.jpg" class="circle"></li>
+            <li><a href="accueil.html"><i class="material-icons white-text">home</i>Accueil</a></li>
+            <li><a href="cabinet.html"><i class="material-icons white-text">location_on</i>Cabinet</a></li>
+            <li><a href="profil.html" class="active"><i class="material-icons white-text">person</i>Mon profil</a></li>
+            <li><a href="dossierMedical.html"><i class="material-icons white-text">folder</i>Dossier médical</a></li>
+            <li><a href="parametres.html"><i class="material-icons white-text">settings</i>Paramètres</a></li>
+        </ul>
+        <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+    </nav>
+    <!-- Page -->
+    <main>
+        <!-- Header -->
+        <header class="section no-pad-bot" id="index-banner">
+            <div class="container center-align textHeader">
+                <img class="ImgProfil circle z-depth-3" src="img/utilisateur.jpg">
+                <h1 class="TextNomUtilisateur center orange-text">Laura Santana</h1>
+                <div class="row center">
+                    <h5 class="header col s12 light">Consulter et modifier vos informations :</h5>
+                </div>
+                <br>
+            </div>
+        </header>
+        <!-- Form -->
+        <section  class="container">
+            <form class="col s12">
+                <div class="row">
+                    <div class="input-field col l6 s12">
+                        <i class="material-icons prefix">account_circle</i>
+                        <input value="Laura" id="icon_prefix" type="text" class="validate">
+                        <label for="icon_prefix">Prénom</label>
+                    </div>
+                    <div class="input-field col l6 s12">
+                        <i class="material-icons prefix">account_circle</i>
+                        <input value="Santana" id="icon_prefix" type="text" class="validate">
+                        <label for="icon_prefix">Nom</label>
+                    </div>
+                    <div class="input-field col l6 s12">
+                        <i class="material-icons prefix">phone</i>
+                        <input value="05 59 69 69 69" id="icon_telephone" type="tel" class="validate">
+                        <label for="icon_telephone">Téléphone</label>
+                    </div>
+                    <div class="input-field col l6 s12">
+                        <i class="material-icons prefix">vpn_key</i>
+                        <input value="420" id="icon_prefix" type="text" class="validate">
+                        <label for="icon_prefix">ID client</label>
+                    </div>
+                </div>
+            </form>
+        </section>
+        <!-- Carousel -->
+        <section class="row center">
+            <h5 class="light col s10 offset-s1">Vos photos enregistrées :</h5>
+            <div class="CarouselProfil carousel carousel-slider indicators col s10 m4 offset-s1 offset-m4">
+                <a class="carousel-item" href="#one!"><img class="" src="img/dent1.jpg"></a>
+                <a class="carousel-item" href="#two!"><img class="" src="img/dent2.jpg"></a>
+                <a class="carousel-item" href="#three!"><img class="" src="img/dent3.jpg"></a>
+            </div>
+        </section>
+    </main>
+    <!-- / Page -->
+
+    <!--  Scripts-->
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="js/materialize.js"></script>
+    <script src="js/init.js"></script>
+    </body>
+</html>
