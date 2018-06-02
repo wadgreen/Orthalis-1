@@ -13,13 +13,22 @@
 
 <body>
     
+    <!-- Chargement de la page -->
+    <div id="loader-wrapper">
+        <div id="loader"></div>
+        <div class="loader-section section-left"></div>
+        <div class="loader-section section-right"></div>
+    </div>
+    <!-- Header -->
     <header>
         <img class="vaguetop" src="img/vaguetop.svg">
     </header>
-    
+    <!-- Sections -->
     <section class="container center">
         <h3 class="teal-text text">Bienvenue</h3>
-        <br><br>
+        <br>
+        <h6 class="container text">Veuillez entrer votre identifiant et votre mot de passe : </h6>
+        <br>
         <form>
             <div class="input-field">
                 <i class="material-icons prefix">mode_edit</i>
@@ -30,14 +39,14 @@
                 <textarea placeholder="Code patient" class="materialize-textarea"></textarea>
             </div>
             <br>
-            <a class="btn-large waves-effect waves-light" type="submit" name="action" href="#">Valider</a>
+            <a class="btn-large waves-effect waves-light" type="submit" name="action" href="accueil.html">Valider</a>
         </form>
     </section>
-    
+    <br><br>
+    <!-- Footer -->
     <footer>
         <img class="vaguebottom hide-on-med-and-up" src="img/vaguebottom.svg">
     </footer>
-
     <!--  Scripts-->
     <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
     <script src="js/materialize.js"></script>

@@ -1,3 +1,39 @@
+// Chargement de la page 
+$(document).ready(function() {
+	
+	setTimeout(function(){
+		$('body').addClass('loaded');
+		$('h1').css('color','#222222');
+  }, 0); // Régler durée minimale du chargement
+	
+});
+
+// Eléments Materialize
+$(document).ready(function(){
+  $('.sidenav').sidenav();
+});
+
+$(document).ready(function(){
+  $('.carousel').carousel();
+});
+
+$(document).ready(function(){
+  $('.parallax').parallax();
+});
+
+$(document).ready(function(){
+  $('.materialboxed').materialbox();
+});
+
+$(document).ready(function(){
+  $('.collapsible').collapsible();
+});
+
+$(document).ready(function () {
+  $('select').formSelect();
+});
+
+// A NETTOYER !!!
 (function($){
   $(function(){
 
@@ -23,24 +59,3 @@ document.addEventListener('DOMContentLoaded', function() {
   var instances = M.Carousel.init(elems, options);
 });
 
-// Or with jQuery
-
-$(document).ready(function(){
-  $('.sidenav').sidenav();
-});
-
-$(document).ready(function(){
-  $('.carousel').carousel();
-});
-
-$(document).ready(function(){
-  $('.parallax').parallax();
-});
-
-$(document).ready(function(){
-  $('.materialboxed').materialbox();
-});
-
-$(document).ready(function(){
-  $('.collapsible').collapsible();
-});

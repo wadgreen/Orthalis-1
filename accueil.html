@@ -12,6 +12,13 @@
 </head>
 
 <body>
+
+    <!-- Chargement de la page -->
+    <div id="loader-wrapper">
+        <div id="loader"></div>
+        <div class="loader-section section-left"></div>
+        <div class="loader-section section-right"></div>
+    </div>
     <!-- Navigation -->
     <nav role="navigation"><h5 class="center">Accueil</h5>
         <ul id="slide-out" class="sidenav sidenav-fixed center">
@@ -26,11 +33,12 @@
     </nav>
     <!-- Page -->
     <main>
+        <!-- Header -->
         <header>
             <img class="vagueheader responsive-img" src="img/vaguetop.svg">
         </header>
-
-        <div class="container">
+        <!-- Sections -->
+        <section class="container">
             <img class="materialboxed dent" width="650" src="img/dent_orange.png">
             <!--derriere regle mon logo-->
             <h2 class="  center grey-text">Cabinet Dentdure</h1>
@@ -38,9 +46,9 @@
             <!--<div class="row center"></div>-->
             <h6 class="header center light">VOTRE ORTHOPTISTE MALIN!!</h6>
             <div class="divider"></div>
-        </div>
+        </section>
     
-        <div class="container">
+        <section class="container">
             <div class="section">
 
                 <!--Les Notifications Une-->
@@ -100,9 +108,9 @@
             </div>
             <br>
             <br>
-        </div>
+        </section>
         <br>
-        <div class="card horizontal">
+        <section class="card horizontal">
             <div class="card-image">
                 <img src="img/dent_orange.png">
             </div>
@@ -114,16 +122,13 @@
                     <a href="#">15h30 vendredi 2 avril</a>
                 </div>
             </div>
-        </div>
-        </div>
+        </section>
     </main>
-
-    
-
     <!--  Scripts-->
     <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
     <script src="js/materialize.js"></script>
     <script src="js/init.js"></script>
+    
 </body>
 
 </html>

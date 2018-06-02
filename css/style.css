@@ -11,17 +11,20 @@ html, body {
         /* Décalage de 300px pour la sidebar */
         padding-left: 300px;
     }
+
     nav, nav .nav-wrapper i, nav a.sidenav-trigger, nav a.sidenav-trigger i {
         /* Navbar contient le burger mais est invisible */
         background: none;
-        height: 100px;
+        height: 60px;
         position: absolute;
         top: 0;
         box-shadow: none;
     }
+
     nav h5 {
         padding-left: 300px;
     }
+
     .sidenav {
         background: var(--colorSidenav);
     }
@@ -51,38 +54,12 @@ html, body {
             padding-left: 0;
         }
     }
-    header .vague {
+    /* En-tête commune aux pages : */
+    header .Vague {
         top: 0;
         min-width: 100%;
-    }
-    /* Page Mon profil : =========================================================== */
-    .ImgProfil {
-        width: 200px;
-    }
-    .TextNomUtilisateur {
-        font-size: 3rem;
-    }
-    .CarouselProfil img {
-        height: 100%;
-        width: auto;
-    }
-    /* Page Paramètres : ============================================================ */
-    .collapsible .pad15 {
-        padding: 1.5rem;
-    }
-      
-    [type="checkbox"] + span:not(.lever) {
-        padding-left: 25px;
-        padding-right: 15px;
-    }
-    /* Page Login patient : ============================================================ */
-    .vaguetop {
-        width:100%;
-    }
-    .vaguebottom {
-        position:fixed;
-        bottom:0;
-        width:100%;
+        z-index: 3;
+        position: absolute;
     }
     /* Page Accueil : ============================================================ */
     /*classe pour les polices dans la notif voila*/
@@ -95,8 +72,43 @@ html, body {
         border-radius: 50%;
         top: 90px;
     }
-    /* Page Login cabinet : ======================================================= */
-    
+
+    /* Page Cabinet ================================================================ */
+    .MainCabinet {
+        padding-top: 60px;
+    }
+        .MainCabinet nav {
+            background: linear-gradient(to right, var(--colorSidenav), var(--colorSidenavClaire));
+        }
+    .Formecard {
+        border-radius: 5px;
+        /* font-size: 10px; */
+     }
+    .Cont {
+       margin-top: -140px;
+    }
+    .Taillepolice{
+       font-size: 1em!important;
+    } 
+    .Bordure {
+       border: 0;
+    } 
+    .Fond {
+       background-color: white!important;
+    }
+
+    /* Page Mon profil : =========================================================== */
+    .ImgProfil {
+        width: 200px;
+    }
+    .TextNomUtilisateur {
+        font-size: 3rem;
+    }
+    .CarouselProfil img {
+        height: 100%;
+        width: auto;
+    }
+
     /* Page Dossier médical : ===================================================== */
     .corps{
         height: 100%;
@@ -105,15 +117,186 @@ html, body {
     .Picture{
         height:20vh;
         width: 20vh;
-    
     }
     .Paiement {
         display: block;
         text-align: center;
-    
     }
     .Rendez-vous{
         display: block;
         text-align: center;
     }
+    
+    /* Page Paramètres : ============================================================ */
+    .collapsible .pad15 {
+        padding: 1.5rem;
+    }
+    [type="checkbox"] + span:not(.lever) {
+        padding-left: 25px;
+        padding-right: 15px;
+    }
+
+    /* Page Login patient : ============================================================ */
+    .vaguetop {
+        width:100%;
+    }
+    .vaguebottom {
+        position:fixed;
+        bottom:0;
+        width:100%;
+    }
+    
+    /* Page Login cabinet : ======================================================= */
+    
+    
+    /* Page loading ===================================================================== */
+    #loader-wrapper {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1000;
+    }
+    #loader {
+        display: block;
+        position: relative;
+        left: 50%;
+        top: 50%;
+        width: 150px;
+        height: 150px;
+        margin: -75px 0 0 -75px;
+        border-radius: 50%;
+        border: 3px solid transparent;
+        border-top-color: var(--colorSidenav);
+    
+        -webkit-animation: spin 2s linear infinite; /* Chrome, Opera 15+, Safari 5+ */
+        animation: spin 2s linear infinite; /* Chrome, Firefox 16+, IE 10+, Opera */
+    
+        z-index: 1001;
+    }
+    
+        #loader:before {
+            content: "";
+            position: absolute;
+            top: 5px;
+            left: 5px;
+            right: 5px;
+            bottom: 5px;
+            border-radius: 50%;
+            border: 3px solid transparent;
+            border-top-color: var(--colorActive);
+    
+            -webkit-animation: spin 3s linear infinite; /* Chrome, Opera 15+, Safari 5+ */
+            animation: spin 3s linear infinite; /* Chrome, Firefox 16+, IE 10+, Opera */
+        }
+    
+        #loader:after {
+            content: "";
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            right: 15px;
+            bottom: 15px;
+            border-radius: 50%;
+            border: 3px solid transparent;
+            border-top-color: var(--colorSidenavClaire);
+    
+            -webkit-animation: spin 1.5s linear infinite; /* Chrome, Opera 15+, Safari 5+ */
+              animation: spin 1.5s linear infinite; /* Chrome, Firefox 16+, IE 10+, Opera */
+        }
+    
+        @-webkit-keyframes spin {
+            0%   { 
+                -webkit-transform: rotate(0deg);  /* Chrome, Opera 15+, Safari 3.1+ */
+                -ms-transform: rotate(0deg);  /* IE 9 */
+                transform: rotate(0deg);  /* Firefox 16+, IE 10+, Opera */
+            }
+            100% {
+                -webkit-transform: rotate(360deg);  /* Chrome, Opera 15+, Safari 3.1+ */
+                -ms-transform: rotate(360deg);  /* IE 9 */
+                transform: rotate(360deg);  /* Firefox 16+, IE 10+, Opera */
+            }
+        }
+        @keyframes spin {
+            0%   { 
+                -webkit-transform: rotate(0deg);  /* Chrome, Opera 15+, Safari 3.1+ */
+                -ms-transform: rotate(0deg);  /* IE 9 */
+                transform: rotate(0deg);  /* Firefox 16+, IE 10+, Opera */
+            }
+            100% {
+                -webkit-transform: rotate(360deg);  /* Chrome, Opera 15+, Safari 3.1+ */
+                -ms-transform: rotate(360deg);  /* IE 9 */
+                transform: rotate(360deg);  /* Firefox 16+, IE 10+, Opera */
+            }
+        }
+    
+        #loader-wrapper .loader-section {
+            position: fixed;
+            top: 0;
+            width: 51%;
+            height: 100%;
+            background: #ffffff;
+            z-index: 1000;  
+            -webkit-transform: translateX(0);  /* Chrome, Opera 15+, Safari 3.1+ */
+            -ms-transform: translateX(0);  /* IE 9 */
+            transform: translateX(0);  /* Firefox 16+, IE 10+, Opera */
+        }
+    
+        #loader-wrapper .loader-section.section-left {
+            left: 0;
+        }
+    
+        #loader-wrapper .loader-section.section-right {
+            right: 0;
+        }
+    
+        /* Loaded ouverture en porte
+        .loaded #loader-wrapper .loader-section.section-left {
+            -webkit-transform: translateX(-100%);  
+                -ms-transform: translateX(-100%);  
+                    transform: translateX(-100%);
+    
+            -webkit-transition: all 0.7s 0.3s cubic-bezier(0.645, 0.045, 0.355, 1.000);  
+                    transition: all 0.7s 0.3s cubic-bezier(0.645, 0.045, 0.355, 1.000);
+        }
+    
+        .loaded #loader-wrapper .loader-section.section-right {
+            -webkit-transform: translateX(100%);  
+                -ms-transform: translateX(100%);  
+                    transform: translateX(100%);  
+    
+    -webkit-transition: all 0.7s 0.3s cubic-bezier(0.645, 0.045, 0.355, 1.000);  
+            transition: all 0.7s 0.3s cubic-bezier(0.645, 0.045, 0.355, 1.000);
+        }
+        
+        .loaded #loader {
+            opacity: 0;
+            -webkit-transition: all 0.5s ease-out;  
+                    transition: all 0.5s ease-out;
+        }
+        */
+        .loaded #loader-wrapper {
+            visibility: hidden;
+    
+            /* Ouverture coulissante vers le haut */  
+                    opacity: 0; 
+    
+            -webkit-transition: all 0.3s 0.8s ease-out;  
+                    transition: all 0.3s 0.8s ease-out;
+                    
+        }
+        
+        /* JavaScript Turned Off */
+        .no-js #loader-wrapper {
+            display: none;
+        }
+        .no-js h1 {
+            color: #222222;
+        }
+    
+    
+    
+    
+     
     
