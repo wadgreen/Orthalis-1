@@ -14,7 +14,7 @@ $(document).ready(function(){
 });
 
 $(document).ready(function(){
-  $('.carousel').carousel();
+  // $('.carousel').carousel();
 });
 
 $(document).ready(function(){
@@ -53,9 +53,3 @@ $('.carousel.carousel-slider').carousel({
   fullWidth: true,
   indicators: true
 });
-
-document.addEventListener('DOMContentLoaded', function() {
-  var elems = document.querySelectorAll('.carousel');
-  var instances = M.Carousel.init(elems, options);
-});
-
