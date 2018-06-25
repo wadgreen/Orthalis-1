@@ -1,7 +1,6 @@
-
 {
     "description": "Cabinet orthodontique des Docteurs Bague, Bridge, Etche et Gourmette",
-    "imageH": "img/cabinetcoupe.png",
+    "image": "img/cabinetcoupe.png",
     "adresse": "31 rue de la digue",
     "tel": "06 69 66 66 66",
     "mail": "docteurfraise@wanadoo.fr",
@@ -22,5 +21,5 @@
             "praticienDesc" : "Un ortho top niveau ! blabla j'ai fais des études blabla...",
             "praticienPhoto" : "img/ortho3.jpg"
         }
-    ] 
+    ]
 }

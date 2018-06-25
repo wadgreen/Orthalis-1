@@ -1,21 +1,9 @@
-// AJAX
-// Requête vers liens du JSON
-var request = new XMLHttpRequest();
-request.open('GET', 'data/cabinet.json');
-// Identification du type de données
-request.responseType = 'json';
-request.send();
-
-request.onload = function() {
-    var reponse = request.response;
-    remplirInfos(reponse);
-    remplirSlider(reponse);
-}
-
-class NotreCabinet {
-    constructor(imageH, description, cabinetAdresse, cabinetTel, cabinetMail, cabinetHoraires) {
-        this.description = description;
-        this.imageH = imageH;
+// Classe InfosCabinet, se sert de la partie cabinet de la bdd pour remplir son contenu
+// Export rend cette classe publique, elle peut être importée
+export class InfosCabinet{
+    constructor(cabinetImageH, cabinetDescription, cabinetAdresse, cabinetTel, cabinetMail, cabinetHoraires) {
+        this.cabinetDescription = cabinetDescription;
+        this.cabinetImage = cabinetImageH;
         this.cabinetAdresse = cabinetAdresse;
         this.cabinetTel = cabinetTel;
         this.cabinetMail = cabinetMail;
@@ -23,17 +11,17 @@ class NotreCabinet {
         this.recupererInfosCabinet();
     }
     recupererInfosCabinet() {
-        document.querySelector("#imageH").src = this.imageH;
-        document.querySelector("#description").textContent = this.description;
+        document.querySelector("#cabinetImage").src = this.cabinetImage;
+        document.querySelector("#cabinetDescription").textContent = this.cabinetDescription;
         document.querySelector("#cabinetAdresse").textContent = this.cabinetAdresse;
         document.querySelector("#cabinetTel").textContent = this.cabinetTel;
         document.querySelector("#cabinetMail").textContent = this.cabinetMail;
         document.querySelector("#cabinetHoraires").innerHTML = this.cabinetHoraires;
     }
-
 }
-
-class SliderCabinet {
+// Classe SliderCabinet, se sert de la partie praticiens de la bdd pour remplir son contenu
+// Export rend cette classe publique, elle peut être importée
+export class SliderCabinet {
     constructor(praticienNom, praticienDesc, praticienPhoto) {
         this.praticienNom = praticienNom;
         this.praticienDesc = praticienDesc;
@@ -60,19 +48,5 @@ class SliderCabinet {
             </div>
         </a>`;
         $('.carousel').carousel();
-        console.log(document.querySelector(".carousel").clientWidth);
-    }
-}
-
-function remplirInfos(jsonObj) {
-    var infosCeCabinet = new NotreCabinet(jsonObj.imageH, jsonObj.description, jsonObj.adresse, jsonObj.tel, jsonObj.mail, jsonObj.horaires); 
-}
-
-function remplirSlider(jsonObj) {
-    let listePraticiens = jsonObj['praticiens'];
-    console.log(listePraticiens);
-    for (let i = 0; i < listePraticiens.length; i++) {
-        let sliderCeCabinet = new SliderCabinet(listePraticiens[i].praticienNom, listePraticiens[i].praticienDesc, listePraticiens[i].praticienPhoto);
-        sliderCeCabinet.recupererInfosSlider();
     }
 }
