@@ -1,0 +1,12 @@
+{
+    "logoCab": "./img/logo.jpg",
+    "nomCab": "Lorem",
+    "imgHeader": "./img/cabinet.jpg",
+    "imgProfil": "./img/user.jpg",
+    "imgDoc1": "./img/fish4.png",
+    "imgDoc2": "./img/fish3.png",
+    "notice":[
+    "Henry a rendez-vous avec le Docteur Roulette le 15 Mai à 9h.",
+    "Le Docteur Marion sera absent du 5 mai au 30 mai."
+    ]
+}
