@@ -1,12 +1,12 @@
 {
     "logoCab": "./images/logo.jpg",
-    "nomCab": "Lorem",
+    "nomCab": "Lou Andreas-Salomé",
     "imgHeader": "./images/cabinet.jpg",
     "imgProfil": "./images/user.jpg",
-    "imgDoc1": "./images/fish4.png",
-    "imgDoc2": "./images/fish3.png",
+    "imgDoc1": "./images/patient1.jpg",
+    "imgDoc2": "./images/user.jpg",
     "notice":[
-    "Henry a rendez-vous avec le Docteur Roulette le 15 Mai à 9h.",
-    "Le Docteur Marion sera absent du 5 mai au 30 mai."
+    "Deborah a rendez-vous avec le Docteur Roulette le 15 Mai à 9h.",
+    "Report du RDV de Joséphine au 5 Juin à 11H avec le docteur Berry."
     ]
 }
