@@ -1,0 +1,13 @@
+     // var fa = document.querySelector('facture');
+        // for (let i = 0; i < fa.length; i++){
+        //     document.querySelector('facture')[i].textContent = this.myJson.factures[i];
+
+        //     let fact = new DossierMedical(this.myJson['factures'.length][i]);
+        //     fact.recupererdossierMed();
+        //     this.histo = new HistoRdv(this.myJson.rdv);
+        //     {
+        //         for (let j = 0; j < this.myJson['rdv'].length; j++) {
+        //             let HistoRdv = new Factures(this.myJson['rdv'][j]);
+        //         }
+        //     }
+        // }
