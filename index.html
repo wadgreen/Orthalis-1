@@ -21,16 +21,16 @@
     </header>
     <!-- Sections -->
     <section class="container center">
-        <div class="container input-field">
-            <i class="material-icons prefix">textsms</i>
-            <input type="text" id="autocomplete-input" class="autocomplete">
-            <label for="autocomplete-input">Taper votre identifiant Cabinet :</label>
-            <br><br>
-        </div>
-        <a href="loginPatient.html" class="waves-effect waves-light btn">Valider</a>
+        <form action="http://fabriquenumerique.fr/OrthalisDemo/loginCabinet.php" method="POST">
+            <div class="container input-field">
+                <i class="material-icons prefix">textsms</i>
+                <input type="password" name="codeCabinet" id="autocomplete-input" class="autocomplete" minlength="8" maxlength="8" required>
+                <label for="autocomplete-input">Taper votre identifiant Cabinet :</label>
+                <br><br>
+                <button type="submit" class="waves-effect waves-light btn">Valider</button>
+            </div>
+        </form>
     </section>
-
-
 
     <!-- Pieds de page -->
     <footer class="footer grey-text">
@@ -38,7 +38,6 @@
             <img src="img/qr-code-150x150.png" alt="" class="responsive-img">
             <p>Politique de confidentialité</p>
             <p>Termes et conditions</p>
-
         </div>
     </footer>
 <!-- Scripts -->
