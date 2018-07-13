@@ -21,7 +21,7 @@
     </header>
     <!-- Sections -->
     <section class="container center">
-        <form action="http://fabriquenumerique.fr/OrthalisDemo/connexion.php" method="post">
+        <form action="" method="post">
             <div class="container input-field">
                 <i class="material-icons prefix">textsms</i>
                 <input type="password" name="codeCabinet" id="codeCabinet" class="autocomplete" minlength="8" maxlength="8" required>
@@ -29,7 +29,7 @@
                 <br><br>
                 <button type="submit" id="submit" class="waves-effect waves-light btn">Se connecter</button>
             </div>
-            <dir id="resultat"></dir>
+            <div id="resultat"></div>
         </form>
     </section>
     <!-- Pieds de page -->
@@ -49,7 +49,6 @@
 
 </html>
 
-<!--
 <script>
 
     $(document).ready(function () {
@@ -60,15 +59,17 @@
                 'http://fabriquenumerique.fr/OrthalisDemo/connexion.php',
                 {
                     codeCabinet: $("#codeCabinet").val() // Nous récupérons la valeur de nos input que l'on fait passer à connexion.php
+                    
                 },
                 function (data) {
                     if (data == 'Success') {
                         // Le membre est connecté. Ajoutons lui un message dans la page HTML.
                         $("#resultat").html("<p>Vous avez été connecté avec succès !</p>");
+                        top.location.href="loginPatient.html";
                     }
                     else {
                         // Le membre n'a pas été connecté. (data vaut ici "failed")
-                        $("#resultat").html("<p>Erreur lors de la connexion...</p>");
+                        $("#resultat").html(data);
                     }
                 },
                 'text'
@@ -77,4 +78,3 @@
 
     });
 </script>
--->

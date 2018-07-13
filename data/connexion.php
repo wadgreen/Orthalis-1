@@ -11,8 +11,7 @@ $DB_name = "fabriquetssimplo";
 $DB_pass = "qgtsNaJy4FHh";
 
 $code_cabinet = $_POST['codeCabinet'];
-var_dump($_POST['codeCabinet']);
-
+//var_dump($_POST['codeCabinet']);
 
 try
 {
@@ -20,27 +19,18 @@ try
     $DB_con = new PDO("mysql:host={$DB_host};dbname={$DB_name}",$DB_user,$DB_pass);
     $DB_con->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-    //Nous vérifions que l'utilisateur a bien envoyé les informations demandées 
-    //if(isset($_POST["codeCabinet"])){
-        //Nous allons demander le hash pour cet utilisateur à notre base de données :
-        $query = $DB_con->prepare("SELECT code_cabinet FROM cabinet WHERE code_cabinet = :codeCabinet");
-        $query->bindParam('codeCabinet', $code_cabinet);
+    $query = $DB_con->prepare("SELECT code_cabinet FROM cabinet WHERE code_cabinet = :codeCabinet");
+    $query->bindParam('codeCabinet', $code_cabinet);
         
-        $query->execute();
-        $result = $query->fetch();
-        var_dump($result);
-        if($result[0] != FALSE){
-            //Si oui nous accueillons l'utilisateur identifié
-            echo "Success";
-            
-        }else{
-            //Sinon nous signalons une erreur d'identifiant ou de mot de passe
-            echo "Error";
-        }
-    //}
-    //else{
-    //    
-    //}
+    $query->execute();
+    $result = $query->fetch();
+    if($result[0] != FALSE){
+        //Si oui nous accueillons l'utilisateur identifié
+        echo "Success";  
+    }else{
+        //Sinon nous signalons une erreur d'identifiant ou de mot de passe
+        echo "Error";
+    }
 }
 catch(PDOException $e)
 {
