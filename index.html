@@ -59,17 +59,17 @@
                 'http://fabriquenumerique.fr/OrthalisDemo/connexion.php',
                 {
                     codeCabinet: $("#codeCabinet").val() // Nous récupérons la valeur de nos input que l'on fait passer à connexion.php
-                    
                 },
                 function (data) {
-                    if (data == 'Success') {
+                    if (data != 'Error') {
                         // Le membre est connecté. Ajoutons lui un message dans la page HTML.
                         $("#resultat").html("<p>Vous avez été connecté avec succès !</p>");
+                        localStorage.setItem("id_cabinet", data);
                         top.location.href="loginPatient.html";
                     }
                     else {
                         // Le membre n'a pas été connecté. (data vaut ici "failed")
-                        $("#resultat").html(data);
+                        $("#resultat").html("Mauvais code cabinet");
                     }
                 },
                 'text'
