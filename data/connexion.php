@@ -16,14 +16,14 @@ try
     $DB_con = new PDO("mysql:host={$DB_host};dbname={$DB_name}",$DB_user,$DB_pass);
     $DB_con->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     // On prépare la requête SQL
-    $query = $DB_con->prepare("SELECT id_cabinet FROM cabinet WHERE code_cabinet = :codeCabinet");
+    $query = $DB_con->prepare("SELECT id_cabinet FROM login WHERE code_cabinet = :codeCabinet");
     $query->bindParam('codeCabinet', $code_cabinet);
     $query->execute();
-    // On récupère le résultat de la requête sous forme de tableau associatif
-    $result = $query->fetchAll();
 
     // On teste si le tableau associatif est vide
-    if(!empty($result)){
+    if($query->rowCount() == 1){
+        // On récupère le résultat de la requête sous forme de tableau associatif
+        $result = $query->fetchAll();
         // Si non on retourne l'id du cabinet
         echo $result[0]['id_cabinet'];  
     }else{
