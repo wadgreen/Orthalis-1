@@ -5,9 +5,10 @@
  * @class DossierMedical
  */
 export class DossierMedical {
-    constructor(factures, histoRdv, solde) {
+    constructor(factures, histoRdv,download, solde) {
         this.factures = factures;
         this.histoRdv = histoRdv;
+        this.download = download;
         this.solde = solde;
         this.recupererdossierMed();
 
@@ -26,7 +27,7 @@ export class DossierMedical {
         // document.querySelector("h5").textContent = this.dossierMed;
         document.querySelector("h6").textContent = this.download;
         // document.querySelector(".factures").textContent = this.factures;
-        document.querySelector("h7").textContent = this.solde;
+        document.querySelector("#solde").textContent = this.solde;
 
 
     }

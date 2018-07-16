@@ -19,9 +19,9 @@ class InitDossiermedical {
         this.request.onload = () => {
 
             this.myJson = this.request.response;
-            this.DossierMedical = new DossierMedical(this.myJson.factures, this.myJson.histoRdv, this.myJson.solde);
+            this.DossierMedical = new DossierMedical(this.myJson.factures, this.myJson.histoRdv,this.myJson[0].download, this.myJson[0].solde);
             ;
-            console.log(this.myJson[0].factures);
+            console.log(this.myJson[0].solde);
 
             var fa = this.myJson[0].factures;
 
