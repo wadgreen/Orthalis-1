@@ -43,6 +43,8 @@
                 "histoDate": "08/09/2019",
                 "histoLien": "fact1.pdf"
             }
-        ]
+        ],
+        "download": "Téléchargez vos fichiers ci-dessous:",
+        "solde": "5000"
     }
 ]
