@@ -15,7 +15,7 @@ try
     // On se connecte et on selectionne la base
     $DB_con = new PDO("mysql:host={$DB_host};dbname={$DB_name}",$DB_user,$DB_pass);
     $DB_con->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    
+
     // On prépare la requête SQL
     $query = $DB_con->prepare("SELECT id_cabinet FROM login WHERE code_cabinet = :codeCabinet");
     $query->bindParam('codeCabinet', $code_cabinet);
@@ -26,10 +26,12 @@ try
         // On récupère le résultat de la requête sous forme de tableau associatif
         $result = $query->fetchAll();
         // Si non on retourne l'id du cabinet
-        echo $result[0]['id_cabinet'];  
+        //echo $result[0]['id_cabinet'];
+        echo json_encode($result[0]['id_cabinet']);
     }else{
         // Si oui il y'a erreur
-        echo "Error";
+        //echo "Error";
+        echo json_encode("Error");
     }
 }
 catch(PDOException $e)
@@ -38,7 +40,4 @@ catch(PDOException $e)
 }
 
 // A pusher !!! copier le contenu du php distant a celui de Data
-
 ?>
-
-

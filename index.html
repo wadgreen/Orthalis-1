@@ -21,7 +21,7 @@
     </header>
     <!-- Sections -->
     <section class="container center">
-        <form id="loginCabinet" action="" method="get">
+        <form id="loginCabinet">
             <div class="container input-field">
                 <i class="material-icons prefix">textsms</i>
                 <input type="password" name="codeCabinet" id="codeCabinet" class="autocomplete" minlength="8" maxlength="8" required>
@@ -44,34 +44,8 @@
     <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
     <script src="js/materialize.js"></script>
     <script src="js/init.js"></script>
+    <script src="js/loginCabinet.js"></script>
 
 </body>
 
 </html>
-
-<script>
-    $(document).ready(function () {
-
-        $("#loginCabinet").submit(function (e) {
-            e.preventDefault();
-            $.post(
-                'http://fabriquenumerique.fr/OrthalisDemo/loginCabinet.php',
-                {
-                    codeCabinet: $("#codeCabinet").val() // Nous récupérons la valeur de notre input que l'on fait passer à connexion.php
-                },
-                function (data) {
-                    if (data != 'Error') {
-                        // Le membre est connecté. Ajoutons lui un message dans la page HTML.
-                        $("#resultat").html("<p>Vous avez été connecté avec succès !</p>");
-                        localStorage.setItem("id_cabinet", data);
-                    }
-                    else {
-                        // Le membre n'a pas été connecté. (data vaut ici "failed")
-                        $("#resultat").html("<p>Mauvais code cabinet !</p>");
-                    }
-                },
-                'text'
-            );
-        });
-    });
-</script>
