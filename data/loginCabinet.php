@@ -15,6 +15,7 @@ try
     // On se connecte et on selectionne la base
     $DB_con = new PDO("mysql:host={$DB_host};dbname={$DB_name}",$DB_user,$DB_pass);
     $DB_con->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    
     // On prépare la requête SQL
     $query = $DB_con->prepare("SELECT id_cabinet FROM login WHERE code_cabinet = :codeCabinet");
     $query->bindParam('codeCabinet', $code_cabinet);
@@ -33,7 +34,11 @@ try
 }
 catch(PDOException $e)
 {
-	echo $e->getMessage();
+    echo $e->getMessage();
 }
 
+// A pusher !!! copier le contenu du php distant a celui de Data
+
 ?>
+
+

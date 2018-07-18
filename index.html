@@ -21,13 +21,13 @@
     </header>
     <!-- Sections -->
     <section class="container center">
-        <form action="" method="post">
+        <form id="loginCabinet" action="" method="get">
             <div class="container input-field">
                 <i class="material-icons prefix">textsms</i>
                 <input type="password" name="codeCabinet" id="codeCabinet" class="autocomplete" minlength="8" maxlength="8" required>
                 <label>Taper votre identifiant Cabinet :</label>
                 <br><br>
-                <button type="submit" id="submit" class="waves-effect waves-light btn">Se connecter</button>
+                <button type="submit" class="waves-effect waves-light btn">Se connecter</button>
             </div>
             <div id="resultat"></div>
         </form>
@@ -50,31 +50,28 @@
 </html>
 
 <script>
-
     $(document).ready(function () {
 
-        $("#submit").click(function (e) {
+        $("#loginCabinet").submit(function (e) {
             e.preventDefault();
             $.post(
-                'http://fabriquenumerique.fr/OrthalisDemo/connexion.php',
+                'http://fabriquenumerique.fr/OrthalisDemo/loginCabinet.php',
                 {
-                    codeCabinet: $("#codeCabinet").val() // Nous récupérons la valeur de nos input que l'on fait passer à connexion.php
+                    codeCabinet: $("#codeCabinet").val() // Nous récupérons la valeur de notre input que l'on fait passer à connexion.php
                 },
                 function (data) {
                     if (data != 'Error') {
                         // Le membre est connecté. Ajoutons lui un message dans la page HTML.
                         $("#resultat").html("<p>Vous avez été connecté avec succès !</p>");
                         localStorage.setItem("id_cabinet", data);
-                        
                     }
                     else {
                         // Le membre n'a pas été connecté. (data vaut ici "failed")
-                        $("#resultat").html("Mauvais code cabinet");
+                        $("#resultat").html("<p>Mauvais code cabinet !</p>");
                     }
                 },
                 'text'
             );
         });
-
     });
 </script>
