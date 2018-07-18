@@ -24,9 +24,9 @@ export class DossierMedical {
     */}
 
     recupererdossierMed(factures,solde) {
-        // document.querySelector("h5").textContent = this.dossierMed;
-        document.querySelector("h6").textContent = this.download;
-        // document.querySelector(".factures").textContent = this.factures;
+        // // document.querySelector("h5").textContent = this.dossierMed;
+        // document.querySelector("h6").textContent = this.download;
+        // // document.querySelector(".factures").textContent = this.factures;
         document.querySelector("#solde").textContent = this.solde;
 
 
