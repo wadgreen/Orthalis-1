@@ -19,11 +19,11 @@ class InitDossiermedical {
         this.request.onload = () => {
 
             this.myJson = this.request.response;
-            this.DossierMedical = new DossierMedical(this.myJson.dossierMed, this.myJson.download, this.myJson.factures, this.myJson.histoRdv, this.myJson.solde);
+            this.DossierMedical = new DossierMedical(this.myJson.factures, this.myJson.histoRdv,this.myJson[0].download,this.myJson[0].solde);
             ;
-            console.log(this.myJson.factures);
+            console.log(this.myJson[0].solde);
 
-            var fa = this.myJson.factures;
+            var fa = this.myJson[0].factures;
 
             for (let facture of fa) {
 
@@ -34,11 +34,16 @@ class InitDossiermedical {
                 let iFact = document.createElement("i");
                 iFact.classList.add("material-icons");
                 iFact.innerHTML = "file_download";
-                divFact.appendChild(iFact);
+                let aFact = document.createElement("a");
+                aFact.appendChild(iFact);
+                divFact.appendChild(aFact);
+                aFact.href = " js/pdf/" + facture.facturesLien;
+                aFact.target = "_blank";
+                // console.dir(aFact);
 
                 document.querySelector("#fact").appendChild(divFact);
                 let spanFact = document.createElement("span");
-                spanFact.innerHTML = facture;
+                spanFact.innerHTML = facture.facturesDate;
                 divFact.appendChild(spanFact);
                 document.querySelector("#fact").appendChild(divFact);
                 // console.log(iFact);
@@ -46,30 +51,39 @@ class InitDossiermedical {
             }
 
 
+            console.log(this.myJson[0].histoRdv);
 
-                var fl = this.myJson.histoRdv;
+            var fl = this.myJson[0].histoRdv;
 
-                for (let rdv of fl) {
+            for (let histoRdv of fl) {
 
-                    let divRdv = document.createElement("div");
-                    divRdv.classList.add("collapsible-header");
-                    console.log(divRdv);
+                let divRdv = document.createElement("div");
+                divRdv.classList.add("collapsible-header");
+                console.log(divRdv);
 
-                    let histoRdvv = document.createElement("i");
-                    histoRdvv.classList.add("material-icons");
-                    histoRdvv.innerHTML = "file_download";
-                    divRdv.appendChild(histoRdvv);
-                    // console.log(divRdv);
-                    document.querySelector("#historendv").appendChild(divRdv);
-                    let spanRdv = document.createElement("span");
-                    spanRdv.innerHTML = rdv;
-                    divRdv.appendChild(spanRdv);
-                    document.querySelector("#historendv").appendChild(divRdv);
+                let iRdv = document.createElement("i");
+                let aHisto = document.createElement("a");
+                aHisto.classList.add("material-icons");
+                aHisto.innerHTML = "file_download";
 
-
+                aHisto.appendChild(iRdv);
+                divRdv.appendChild(aHisto);
+                aHisto.href = " js/pdf/" + histoRdv.histoLien;
+                aHisto.target = "_blank";
+                console.dir(aHisto);
 
 
-                }
+                // console.log(divRdv);
+                document.querySelector("#historendv").appendChild(divRdv);
+                let spanRdv = document.createElement("span");
+                spanRdv.innerHTML = histoRdv.histoDate;
+                divRdv.appendChild(spanRdv);
+                document.querySelector("#historendv").appendChild(divRdv);
+
+
+
+
+            }
         }
     }
 }
