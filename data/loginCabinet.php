@@ -1,6 +1,6 @@
 <?php
 
-header("Access-Control-Allow-Origin: *");
+// header("Access-Control-Allow-Origin: *");
 
 // VARIABLES DE CONNEXION
 $DB_host = "mysql458.sql004";
@@ -8,6 +8,7 @@ $DB_user = "fabriquetssimplo";
 $DB_name = "fabriquetssimplo";
 $DB_pass = "qgtsNaJy4FHh";
 
+// $code_cabinet = $_POST['codeCabinet'];
 $code_cabinet = $_POST['codeCabinet'];
 
 try
@@ -26,12 +27,11 @@ try
         // On récupère le résultat de la requête sous forme de tableau associatif
         $result = $query->fetchAll();
         // Si non on retourne l'id du cabinet
-        //echo $result[0]['id_cabinet'];
-        echo json_encode($result[0]['id_cabinet']);
+        echo $result[0]['id_cabinet'];
     }else{
         // Si oui il y'a erreur
-        //echo "Error";
-        echo json_encode("Error");
+        echo 'error';
+        // echo json_encode("Error");
     }
 }
 catch(PDOException $e)
@@ -39,5 +39,6 @@ catch(PDOException $e)
     echo $e->getMessage();
 }
 
-// A pusher !!! copier le contenu du php distant a celui de Data
 ?>
+
+
