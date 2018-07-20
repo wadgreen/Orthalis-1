@@ -6,18 +6,18 @@ if (jso) {
 else {}
 
 function login() {
-    data = document.querySelector("#codeCabinet").value;
-    alert(data);
+    // form input data
+    inputCabinet = document.querySelector("#codeCabinet").value;
+
+    // Ajax
     var xhr = new XMLHttpRequest();
-    
     xhr.open("POST", "http://fabriquenumerique.fr/OrthalisDemo/loginCabinet.php", true);
     xhr.setRequestHeader('Content-Type','application/x-www-form-urlencoded');
     // xhr.setRequestHeader('Content-Type', 'application/json');
-    xhr.send("codeCabinet=" + escape(data));
+    xhr.send("codeCabinet=" + escape(inputCabinet));
 
     xhr.addEventListener('readystatechange', (e) => {
         if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
-
             // alert(e.currentTarget.response);
             // var resultat = e.currentTarget.response;
             var resultat = xhr.response.trim();
