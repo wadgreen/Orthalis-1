@@ -5,27 +5,32 @@ if (jso) {
 }
 else {}
 
-// 'Se connecter' button submit function
-$(document).ready(function () {
-    $("#loginCabinet").submit(function (e) {
-        e.preventDefault();
-        $.post(
-            'http://fabriquenumerique.fr/OrthalisDemo/loginCabinet.php',
-            {
-                codeCabinet: $("#codeCabinet").val() // Nous récupérons la valeur de notre input que l'on fait passer à connexion.php
-            },
-            function (data) {
-                if (data !== 'Error') {
-                    // Le membre est connecté. Ajoutons lui un message dans la page HTML.
-                    $("#resultat").html("<p>Vous avez été connecté avec succès !</p>");
-                    localStorage.setItem("id_cabinet", data);
-                    window.location.href = "loginPatient.html";
-                }
-                else {
-                    $("#resultat").html("<p>Erreur !</p>");
-                }
-            },
-            'json'
-        );
+function login() {
+    data = document.querySelector("#codeCabinet").value;
+    alert(data);
+    var xhr = new XMLHttpRequest();
+    
+    xhr.open("POST", "http://fabriquenumerique.fr/OrthalisDemo/loginCabinet.php", true);
+    xhr.setRequestHeader('Content-Type','application/x-www-form-urlencoded');
+    // xhr.setRequestHeader('Content-Type', 'application/json');
+    xhr.send("codeCabinet=" + escape(data));
+
+    xhr.addEventListener('readystatechange', (e) => {
+        if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
+
+            // alert(e.currentTarget.response);
+            // var resultat = e.currentTarget.response;
+            var resultat = xhr.response.trim();
+            console.dir(resultat);
+            
+            if (resultat != "error") {
+                document.querySelector("#resultat").innerHTML = "<p>Vous avez été connecté avec succès !</p>";
+                localStorage.setItem("id_cabinet", e.currentTarget.response);
+                window.location.href = "loginPatient.html";
+            }
+            else {
+                document.querySelector("#resultat").innerHTML = "<p>Mauvais code cabinet</p>";
+            }
+        }
     });
-});
+}
