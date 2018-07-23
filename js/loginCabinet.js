@@ -18,14 +18,11 @@ function login() {
 
     xhr.addEventListener('readystatechange', (e) => {
         if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
-            // alert(e.currentTarget.response);
-            // var resultat = e.currentTarget.response;
             var resultat = xhr.response.trim();
-            console.dir(resultat);
             
             if (resultat != "error") {
                 document.querySelector("#resultat").innerHTML = "<p>Vous avez été connecté avec succès !</p>";
-                localStorage.setItem("id_cabinet", e.currentTarget.response);
+                localStorage.setItem("id_cabinet", resultat);
                 window.location.href = "loginPatient.html";
             }
             else {

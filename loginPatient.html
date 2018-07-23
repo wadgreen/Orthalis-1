@@ -28,21 +28,22 @@
     </header>
     <!-- Sections -->
     <section class="container center">
-        <form action="" method="post">
+        <form onsubmit="login(); return false;">
             <div class="container input-field">
                 <i class="material-icons prefix">person</i>
-                <input type="text" name="codePatient" id="codePatient autocomplete-input" class="autocomplete" required>
-                <label for="autocomplete-input">Votre identifiant patient :</label>
+                <input type="text" id="codePatient" required>
+                <label>Taper votre code patient</label>
+                <br><br>
             </div>
-            <br><br>
             <div class="container input-field">
                 <i class="material-icons prefix">lock_outline</i>
-                <input type="password" name="mdpcodePatient" id="mdpPatient" class="autocomplete" required>
-                <label>Votre mot de passe patient :</label>
+                <input type="password" id="mdpPatient" required>
+                <label>Taper votre mot de passe :</label>
+                <br><br>
             </div>
-            <button type="submit" id="submit" class="waves-effect waves-light btn">Se connecter</button>
-            <div id="resultat"></div>
+            <button type="submit" class="waves-effect waves-light btn">Se connecter</button>
         </form>
+        <div id="resultat"></div>
     </section>
 
     <!-- Footer -->
@@ -53,6 +54,7 @@
     <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
     <script src="js/materialize.js"></script>
     <script src="js/init.js"></script>
+    <script src="js/loginPatient.js"></script>
 
 </body>
 
