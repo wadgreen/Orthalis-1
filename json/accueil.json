@@ -1,0 +1,12 @@
+{
+    "logoCab": "./images/logo.jpg",
+    "nomCab": "Lou Andreas-Salomé",
+    "imgHeader": "./images/cabinet.jpg",
+    "imgProfil": "./images/user.jpg",
+    "imgDoc1": "./images/patient1.jpg",
+    "imgDoc2": "./images/user.jpg",
+    "notice":[
+    "Deborah a rendez-vous avec le Docteur Roulette le 15 Mai à 9h.",
+    "Report du RDV de Joséphine au 5 Juin à 11H avec le docteur Berry."
+    ]
+}

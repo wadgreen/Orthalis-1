@@ -9,10 +9,10 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="css/materialize.min.css" type="text/css" rel="stylesheet" media="screen,projection" />
     <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection" />
+
 </head>
 
 <body>
-
     <!-- Chargement de la page -->
     <div id="loader-wrapper">
         <div id="loader"></div>
@@ -22,7 +22,7 @@
     <!-- Navigation -->
     <nav role="navigation"><h5 class="center">Accueil</h5>
         <ul id="slide-out" class="sidenav sidenav-fixed center">
-            <li><img src="img/utilisateur.jpg" class="circle"></li>
+            <li><img src="img/utilisateur.jpg" id="imgUser" class="circle"></li>
             <li><a href="accueil.html" class="active"><i class="material-icons white-text">home</i>Accueil</a></li>
             <li><a href="cabinet.html"><i class="material-icons white-text">location_on</i>Cabinet</a></li>
             <li><a href="profil.html"><i class="material-icons white-text">person</i>Mon profil</a></li>
@@ -41,8 +41,8 @@
         <section class="container Container_logo">
             <!--derriere regle mon logo-->
             <br>
-            <h2 class="center grey-text Titre plusgro"><img class="dent" src="img/dent_orange.png">Cabinet orthodontique</h2>
-            <h2 class="center grey-text Titre plusgro Titremarge">des Docteurs Bague, Bridge, Etché et Fraise</h2>
+            <h2 class="center grey-text Titre plusgro"><img id="logo_d" class="dent responsive-img" src="img/dent_orange.png">Cabinet orthodontique</h2>
+            <h2 id="nameCabinet" class="center grey-text Titre plusgro Titremarge">des Docteurs Bague, Bridge, Etché et Fraise</h2>
             <!-- <h2 class="center grey-text Titre">des Docteur Bague, Bridge, Etche et Fraise</h2> cardpanel ou carpanel horizontal -->
             <!--<div class="row center"></div>-->
             <!-- <h6 class="header center light">VOTRE ORTHOPTISTE MALIN!!</h6> -->
@@ -51,7 +51,7 @@
 
 
         <section class="container">
-        <img class="responsive-img Photoaccueil z-depth-2" src="img/cabinetcoupe.png">
+        <img id="imagHeader" class="responsive-img Photoaccueil z-depth-2" src="img/cabinetcoupe.png">
         </section>
 
         <section class="container">
@@ -64,15 +64,15 @@
                     <br>
                     <div class="card-panel grey lighten-5 z-depth-2 Fondcard">
                         <div class="row valign-wrapper">
-                            <div class="col s2">
-                                <img src="img/ortho3.jpg" alt="" class="circle responsive-img">
+                            <div class="phtdoc col s2">
+                                <img id="doc1" src="img/ortho3.jpg" alt="" class="circle responsive-img">
                                 <!-- notice the "circle" class -->
                             </div>
-                            <div class="col s10">
-                                <span class="black-text Notif">
-                                    <!--black change la couleur-->
+                            <div class="Notif col s10">
+                                <!--<span class="black-text Notif">
+                                    black change la couleur
                                     Laura a rendez-vous avec le Docteur Fraise le 15 avril à 15h.
-                                </span>
+                                </span>-->
                             </div>
                         </div>
                     </div>
@@ -81,14 +81,14 @@
                 <div class="col s12 m8 offset-m2 l6 offset-l3">
                     <div class="card-panel grey lighten-5  z-depth-2">
                         <div class="row valign-wrapper">
-                            <div class="col s2">
-                                <img src="img/ortho2.jpg" alt="" class="circle responsive-img">
+                            <div class="phtdoc col s2">
+                                <img id="doc2" src="img/ortho2.jpg" alt="" class="circle responsive-img">
                                 <!-- notice the "circle" class -->
                             </div>
-                            <div class="col s10">
-                                <span class="black-text Notif">
+                            <div class="Notif col s10">
+                                <!--<span class="black-text Notif">
                                     Le Docteur Etche sera absent du 15 avril au 30 avril.
-                                </span>
+                                </span>-->
                             </div>
                         </div>
                     </div>
@@ -121,7 +121,9 @@
     <!--  Scripts-->
     <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
     <script src="js/materialize.js"></script>
+    <!--<script src="./js/accueil_webstorage.js"></script>-->
     <script src="js/init.js"></script>
+    <script type="module" src="js/inits.js"></script>
     
 </body>
 
