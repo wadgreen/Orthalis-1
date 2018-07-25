@@ -1,8 +1,13 @@
-# Le GuideHub
+# Rendu actuel
+
+https://miaborde.github.io/Orthalis/
+
+
+# GuideHub
 
 Comment participer au projet avec Git et ses lignes de commandes ?
 
-## Getting Started
+## Démarrage
 
 Il vous faudra d'abord cloner le projet sur votre machine, c'est à dire récupérer le repository depuis mon compte Github et le placer dans votre espace de travail.
 Pour la suite des l'explications on partira du fait que vous travaillez depuis votre serveur local.
