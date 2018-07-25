@@ -1,0 +1,20 @@
+{
+    "dossierMed": "Dossier médical de Ludwig",
+    "download": "Téléchargez vos fichiers ici",
+    
+    "factures": [
+        "Factures du 06/06/2018",
+        "Factures du 07/03/2018",
+        "Factures du 08/07/2018",
+        "Factures du 09/04/2018",
+        "Factures du 70/56/5454"
+    ],
+    "histoRdv": [
+        "Compte rendu du 05/05/2018",
+        "Compte rendu du 45/05/2018",
+        "Compte rendu du 09/07/2018",
+        "Compte rendu du 10/08/2018"
+    ],
+
+    "solde": "Solde : 500€"
+}
