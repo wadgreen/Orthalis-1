@@ -12,7 +12,7 @@ function login() {
     
     // Ajax
     var xhr = new XMLHttpRequest();
-    xhr.open("POST", "http://fabriquenumerique.fr/OrthalisDemo/loginPatient.php", true);
+    xhr.open("POST", "//fabriquenumerique.fr/OrthalisDemo/loginPatient.php", true);
     xhr.setRequestHeader('Content-Type','application/x-www-form-urlencoded');
     // xhr.setRequestHeader('Content-Type', 'application/json');
     xhr.send("codePatient=" + encodeURI(inputCodePatient) + "&mdpPatient=" + encodeURI(inputMdpPatient));

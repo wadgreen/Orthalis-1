@@ -11,7 +11,7 @@ function login() {
 
     // Ajax
     var xhr = new XMLHttpRequest();
-    xhr.open("POST", "http://fabriquenumerique.fr/OrthalisDemo/loginCabinet.php", true);
+    xhr.open("POST", "//fabriquenumerique.fr/OrthalisDemo/loginCabinet.php", true);
     xhr.setRequestHeader('Content-Type','application/x-www-form-urlencoded');
     // xhr.setRequestHeader('Content-Type', 'application/json');
     xhr.send("codeCabinet=" + escape(inputCabinet));
