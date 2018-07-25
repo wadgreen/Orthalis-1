@@ -1,10 +1,9 @@
 import { InfosCabinet, SliderCabinet } from './InfosCabinet.js';
 
 class InitCabinet {
-    constructor() {
+    constructor(){
         // Requête vers liens du JSON
         this.request = new XMLHttpRequest();
-        console.log(XMLHttpRequest);
         this.request.open('GET', 'data/cabinet.json');
         // Identification du type de données
         this.request.responseType = 'json';
@@ -17,8 +16,6 @@ class InitCabinet {
             for (let i = 0; i < this.jsonObj['praticiens'].length; i++) {
                 let slider = new SliderCabinet(this.jsonObj['praticiens'][i].praticienNom, this.jsonObj['praticiens'][i].praticienDesc, this.jsonObj['praticiens'][i].praticienPhoto);
                 slider.recupererInfosSlider();
-
-                
             }
         }
     }
