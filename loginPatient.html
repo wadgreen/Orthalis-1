@@ -23,24 +23,27 @@
     <!-- Header -->
     <header>
         <img class="vaguetop" src="img/vaguetop.svg">
+        <h2 class="center">Bienvenue</h2>
+        <br><br>
     </header>
     <!-- Sections -->
     <section class="container center">
-        <h3 class="teal-text text">Bienvenue</h3>
-        <br>
-        <br>
-        <form>
-            <div class="input-field">
+        <form onsubmit="login(); return false;">
+            <div class="container input-field">
                 <i class="material-icons prefix">person</i>
-                <textarea placeholder="Code patient" class="materialize-textarea"></textarea>
+                <input type="text" id="codePatient" required>
+                <label>Taper votre code patient</label>
+                <br><br>
             </div>
-            <div class="input-field">
+            <div class="container input-field">
                 <i class="material-icons prefix">lock_outline</i>
-                <textarea placeholder="Mot de passe" class="materialize-textarea"></textarea>
+                <input type="password" id="mdpPatient" required>
+                <label>Taper votre mot de passe :</label>
+                <br><br>
             </div>
-            <br>
-            <a class="btn-large waves-effect waves-light" type="submit" name="action" href="accueil.html">Valider</a>
+            <button type="submit" class="waves-effect waves-light btn">Se connecter</button>
         </form>
+        <div id="resultat"></div>
     </section>
 
     <!-- Footer -->
@@ -51,6 +54,7 @@
     <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
     <script src="js/materialize.js"></script>
     <script src="js/init.js"></script>
+    <script src="js/loginPatient.js"></script>
 
 </body>
 

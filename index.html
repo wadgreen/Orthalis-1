@@ -21,30 +21,31 @@
     </header>
     <!-- Sections -->
     <section class="container center">
-        <div class="container input-field">
-            <i class="material-icons prefix">textsms</i>
-            <input type="text" id="autocomplete-input" class="autocomplete">
-            <label for="autocomplete-input">Taper votre identifiant Cabinet :</label>
-            <br><br>
-        </div>
-        <a href="loginPatient.html" class="waves-effect waves-light btn">Valider</a>
+        <form name="formCabinet" onsubmit="login(); return false; ">
+            <div class="container input-field">
+                <i class="material-icons prefix">textsms</i>
+                <input type="password" id="codeCabinet" maxlength="8" minlength="8" required>
+                <label>Taper votre identifiant Cabinet :</label>
+                <br><br>
+                <button type="submit" class="waves-effect waves-light btn">Se connecter</button>
+            </div>
+        </form>
+        
+        <div id="resultat"></div>
     </section>
-
-
-
     <!-- Pieds de page -->
     <footer class="footer grey-text">
         <div class="container qrCode center-align">
             <img src="img/qr-code-150x150.png" alt="" class="responsive-img">
             <p>Politique de confidentialité</p>
             <p>Termes et conditions</p>
-
         </div>
     </footer>
-<!-- Scripts -->
+    <!-- Scripts -->
     <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
     <script src="js/materialize.js"></script>
     <script src="js/init.js"></script>
+    <script src="js/loginCabinet.js"></script>
 
 </body>
 
