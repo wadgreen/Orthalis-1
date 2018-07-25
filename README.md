@@ -87,16 +87,8 @@ On fusionne Toto au master
 ```
 git merge origin/Toto
 ```
-
-ajouter tous les fichiers
-```
-git add .
-```
-
-sauvegarder les changements
-```
-git commit -m "expliquez les fonctionnalités ajoutées depuis votre branche et les impacts de votre merge"
-```
+// expliquez les fonctionnalités ajoutées depuis votre branche et les impacts de votre merge
+// Vérifier que tout fonctionne en local
 
 mettre vos changements en ligne
 ```
