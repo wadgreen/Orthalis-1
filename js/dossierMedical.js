@@ -5,11 +5,10 @@
  * @class DossierMedical
  */
 export class DossierMedical {
-    constructor(dossierMed, download, factures, histoRdv, solde) {
-        this.dossierMed = dossierMed;
-        this.download = download;
+    constructor(factures, histoRdv,download, solde) {
         this.factures = factures;
         this.histoRdv = histoRdv;
+        this.download = download;
         this.solde = solde;
         this.recupererdossierMed();
 
@@ -24,11 +23,11 @@ export class DossierMedical {
      * @memberof DossierMedical - Classe instanciée
     */}
 
-    recupererdossierMed(dossierMed,download,factures,solde) {
-        document.querySelector("h5").textContent = this.dossierMed;
-        document.querySelector("h6").textContent = this.download;
-        // document.querySelector(".factures").textContent = this.factures;
-        document.querySelector("h7").textContent = this.solde;
+    recupererdossierMed(factures,solde) {
+        // // document.querySelector("h5").textContent = this.dossierMed;
+        // document.querySelector("h6").textContent = this.download;
+        // // document.querySelector(".factures").textContent = this.factures;
+        document.querySelector("#solde").textContent = this.solde;
 
 
     }
